@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+    <title>测试</title>
+    <style>
+/*reset
+----------------------------------------------------------------------------------------------------*/
+    body, figure {
+        margin: 0;
+        padding: 0;
+    }
+
+/*public
+----------------------------------------------------------------------------------------------------*/
+    figure {
+        position: relative;
+        width: 33.33%;
+        float: left;
+        height: 350px;
+        overflow: hidden;
+        outline: 1px solid red;
+    }
+    figure img {
+        width: 120%;
+        opacity: 0.9;
+        filter: Alpha(opacity: 90);  /*IE8及其以下版本*/
+    }
+    figcaption {
+        position: absolute;
+        font-family: "微软雅黑";
+        top: 0;
+        left: 0;
+    }
+    figcaption h2 {
+        color: #fff;
+    }
+    figcaption p {
+        text-align: center;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+    figure img,
+    figcaption h2,
+    figcaption p,
+    figcaption div {
+        transition-property: all; /*IE9不支持*/
+        -webkit-transition-property: all; /*Safari*/
+
+
+        transition-duration: 0.35s;
+        -webkit-transition-duration: 0.35s; /*Safari*/
+    }
+
+/*animate
+----------------------------------------------------------------------------------------------------*/
+    /*动画1*/
+    .animate1 {
+        background-color: #67beef;
+    }
+    .animate1 p {
+        width: 120px;
+        transform: translate(-120px, 0);
+        -ms-transform: translate(-120px, 0); /*IE9*/
+        -webkit-transform: translate(-120px, 0); /*Safari和chrome*/
+    }
+    .animate1 p:nth-of-type(1) { /*IE8及其低版本不支持nth-of-type(n)*/
+        transition-delay: 0.05s;
+    }
+    .animate1 p:nth-of-type(2) {
+        transition-delay: 0.1s;
+    }
+    .animate1 p:nth-of-type(3) {
+        transition-delay: 0.15s;
+    }
+    .animate1:hover p {
+        transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+    .animate1:hover img {
+        opacity: 0.8;
+        filter: Alpha(opacity: 80);
+
+        transform: translate(-10%, 0);
+    }
+    /*动画2*/
+    .animate2 {
+        background-color: #caff67;
+    }
+    .animate2 figcaption {
+        width: 100%;
+        height: 100%;
+        padding: 10% 15%;
+        box-sizing: border-box;
+    }
+    .animate2 h2 {
+        width: 12em;
+    }
+    .animate2 p {
+        width: 12em;
+        transform: translate(0, 120px);
+        opacity: 0;
+    }
+    .animate2 div {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        top: 10%;
+        left: 10%;
+        transform: translate(0, -120%) rotate(0);
+    }
+    .animate2:hover img {
+    }
+    .animate2:hover p {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    .animate2:hover div {
+        transform: translate(0, 0) rotate(180deg);
+    }
+
+    /*动画3*/
+    .animate3 figcaption {
+        width: 100%;
+        height: 100%;
+        padding: 10% 15%;
+        box-sizing: border-box;
+    }
+    .animate3 h2 {
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+    .animate3 p {
+        width: 12em;
+        opacity: 0;
+        transform: scale(1.2, 1.2);
+    }
+    .animate3 div {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        box-sizing: border-box;
+        border: 1px solid #fff;
+        top: 10%;
+        left: 10%;
+        transform: scale(1.5, 1.5);
+    }
+    .animate3:hover img {
+        transform: scale(1.2, 1.2);
+    }
+    .animate3:hover h2,
+    .animate3:hover p {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    .animate3:hover div {
+        transform: scale(1, 1);
+    }
+
+    /*动画4*/
+    .animate4 figcaption {
+        width: 100%;
+        height: 100%;
+        padding: 10% 15%;
+        box-sizing:border-box;
+    }
+    .animate4 p {
+        width: 12em;
+    }
+    .animate4 div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        background-color: #fff;
+        top: 100%;
+        left: 30%;
+        opacity: 0;
+        transform-origin: 0 0;
+    }
+    .animate4:hover div {
+        opacity: 0.8;
+        transform: skew(0, -20deg);
+    }
+
+    /*动画5*/
+    .animate5 figcaption {
+        width: 100%;
+        height: 100%;
+        padding: 10% 25%;
+        box-sizing:border-box;
+    }
+    .animate5 p {
+        width: 12em;
+    }
+    .animate5 div.line1,
+    .animate5 div.line2 {
+        position: absolute;
+    }
+    .animate5 div.line1 {
+        width: 60%;
+        height: 80%;
+        top: 10%;
+        left: 20%;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        transform: scale(1, 0);
+    }
+    .animate5 div.line2 {
+        width: 80%;
+        height: 60%;
+        top: 20%;
+        left: 10%;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        transform: scale(0, 1);
+    }
+    .animate5:hover div.line1,
+    .animate5:hover div.line2 {
+        transform: scale(1, 1);
+    }
+    .animate4:hover div {
+        opacity: 0.8;
+        transform: skew(0, -20deg);
+    }
+
+
+
+/*
+媒体查询关键字之间（包括and和括号之间）必须有空格
+*/
+/*media-min
+----------------------------------------------------------------------------------------------------*/
+    @media screen and (max-width: 600px) {
+        figure {
+            width: 100%;
+        }
+    }
+
+/*media-middle
+----------------------------------------------------------------------------------------------------*/
+    @media screen and (min-width: 601px) and (max-width: 1000px) {
+        figure {
+            width: 50%;
+        }
+    }
+
+/*media-max
+----------------------------------------------------------------------------------------------------*/
+    @media screen and (min-width: 1001px) {
+        figure {
+            width: 33.3%;
+        }
+    }
+
+
+    .mysvg {
+        width: 100px;
+        height: 100px;
+        clear: both;
+        background: url(../SVG/figure.svg);
+    }
+    </style>
+</head>
+<body>
+    <figure class="animate1">
+        <img src="../SVG/figure.svg" />
+        <figcaption>
+            <h2>这是图片标题</h2>
+            <p>这是图片注释1</p>
+            <p>这是图片注释2</p>
+            <p>这是图片注释3</p>
+        </figcaption>
+    </figure>
+    <figure class="animate2">
+        <img src="./imgs/login_bg_0001.png" />
+        <figcaption>
+            <h2>这是图片标题</h2>
+            <p>我最美，我最漂亮~</p>
+            <div></div>
+        </figcaption>
+    </figure>
+    <figure class="animate3">
+        <img src="./imgs/login_bg_0001.png" />
+        <figcaption>
+            <h2>这是图片标题</h2>
+            <p>这是图片注释</p>
+            <div></div>
+        </figcaption>
+    </figure>
+    <figure class="animate4">
+        <img src="./imgs/login_bg_0001.png" />
+        <figcaption>
+            <h2>这是图片标题</h2>
+            <p>这是图片注释</p>
+            <div></div>
+        </figcaption>
+    </figure>
+    <figure class="animate5" hidden>
+        <img src="./imgs/login_bg_0001.png" />
+        <figcaption>
+            <h2>这是图片标题</h2>
+            <p>这是图片注释</p>
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </figcaption>
+    </figure>
+    <input type="text" name="name">
+        <img src="../SVG/figure.svg" />
+
+        <div class="mysvg"></div>
+</body>
+<script type="text/javascript">
+
+
+
+
+</script> 
+</html>

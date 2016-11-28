@@ -1,0 +1,219 @@
+<!DOCUTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>flex弹性盒子(IE9+)</title>
+	<link type="text/css" rel="stylesheet" media="screen and (min-width:500px) and (max-width:1000px),print" href="./css/screen.css" />
+	<link type="text/css" rel="stylesheet" media="print" href="./css/print.css" />
+	<style>
+	ul,li{list-style:none;padding:0;margin:0;}
+		body>div {
+			width: 200px;
+			height: auto;
+			margin: 30px auto 0;
+		}
+
+	/*border样式
+	--------------------------------------------------*/
+		.border-style div {
+			width: 200px;
+			height: 50px;
+			border-bottom-width: 10px;
+			border-bottom-color: red;
+		}
+		.bd1 {border-bottom-style: solid;}
+		.bd2 {border-bottom-style: hidden;}
+		.bd3 {border-bottom-style: dotted;}
+		.bd4 {border-bottom-style: dashed;}
+		.bd5 {border-bottom-style: double;}
+		.bd6 {border-bottom-style: groove;}
+		.bd7 {border-bottom-style: ridge;}
+		.bd8 {border-bottom-style: inset;}
+		.bd9 {border-bottom-style: outset;}
+		.bd10 {border-bottom-style: inherit;}
+		.wrapper {
+			width: 200px;
+			height: 200px;
+			border: 1px dotted red;
+			margin: 100px auto;
+		}
+
+	/*animation
+	--------------------------------------------------*/
+		.wrapper div {
+			width: 50%;
+			height: 50%;
+			background: orange;
+		}
+		
+		.w1 div {
+			font-size: 10px;
+			width: 5em;
+			height: 5em;
+			transition-property: all;
+			transition-duration: 0.35s;
+			transform-origin: 10 left;
+			background-color: red;
+			animation: wobble 3s;
+			animation-direction: alternate;
+			animation-iteration-count: infinite;
+
+			/*定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：none、forwards、backwords和both。*/
+			animation-fill-mode: both; 
+		}
+		.w1 div:hover {
+			animation-play-state: paused; /*播放状态*/
+		}
+		@keyframes wobble {
+		  0% {
+		    margin-left: 100px;
+		    background:green;
+		  }
+		  40% {
+		    margin-left:150px;
+		    background:orange;
+		  }
+		  60% {
+		    margin-left: 75px;
+		    background: blue;
+		  }
+		  100% {
+		    margin-left: 100px;
+		    background: red;
+		  }
+		}
+
+
+
+	/*column分列
+	--------------------------------------------------*/
+		.column {
+			width: 500px;
+			height: 100px;
+			max-height: 500px;
+			background-color: gray;
+			
+			overflow-y: auto;
+			-webkit-resize: vertical;
+			-moz-resize: vertical;
+			-o-resize: vertical;
+			-ms-resize: vertical;
+			resize: vertical;
+		}
+		.column_inner {
+			min-height: 50px;
+			
+			columns-width: auto;
+			columns-count: 3;
+			column-gap: 20px; /*列间距*/
+			column-rule: 1px solid red; /*裂变看样式*/
+
+			-moz-columns: auto 3; 
+			columns: auto 3;
+			-moz-column-gap: 3em;
+			-webkit-column-gap: 3em;
+			-moz-column-rule: 50px double red;
+			-webkit-column-rule: 50px double red;
+		}
+		.column h2 {
+			-moz-column-span: all;
+			-webkit-column-span: all;
+			column-span: all; /*Firefox不支持*/
+		}
+
+	/*盒模型-伸缩布局Flexbox
+	--------------------------------------------------*/
+		ul.flexcontainer {
+			width: 1000px;
+			height: 300px;
+		}
+		.flexcontainer {
+			-webkit-display: flex;
+			-moz-display: flex;
+			display: flex;
+
+			-webkit-flex-direction: row;
+			-moz-flex-direction: row;
+			flex-direction: row;
+
+
+			-moz-justify-content:flex-start ;
+		}
+		.flexcontainer li {width:30px;height:30px;}
+		.flexcontainer :nth-child(1){flex:1;background-color: red;}
+		.flexcontainer :nth-child(2){flex:2;background-color: green;}
+		.flexcontainer :nth-child(3){flex:1;background-color: yellow;}
+
+
+
+		.textarea {
+			-webkit-resize: horizontal;
+			-moz-resize: horizontal;
+			-o-resize: horizontal;
+			-ms-resize: horizontal;
+			resize: horizontal;
+		}
+		a.attrfn:before {
+			content:attr(data-txt);
+			color:#f00;
+		}
+		a.attrfn:after {
+			content: "("attr(title)")";
+			color:#f00;
+		}
+		img.attrfn[data-src-600px]{
+			content: attr(data-src-600px,alt);
+		}
+	</style>
+</head>
+<body>
+
+<!-- border样式 开始 -->
+	<div class="border-style">
+		<div class="bd1"></div>
+		<div class="bd2"></div>
+		<div class="bd3"></div>
+		<div class="bd4"></div>
+		<div class="bd5"></div>
+		<div class="bd6"></div>
+		<div class="bd7"></div>
+		<div class="bd8"></div>
+		<div class="bd9"></div>
+		<div class="bd10"></div>
+	</div>
+<!-- border样式 结束 -->
+
+<!-- animation 开始 -->
+	<div class="wrapper w1">
+	  <div><span>sadgfdhg</span></div>
+	</div>
+<!-- animation 结束 -->
+
+<!-- column分列 开始 -->
+	<div class="column">
+		<div class="column_inner">
+			<h2>我要分列显示</h2>
+			<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+			<p>为了能在Web页面中方便实现类似报纸、杂志那种多列排版的布局，W3C特意给CSS3增加了一个多列布局模块（CSS Multi Column Layout Module）。它主要应用在文本的多列布局方面。对于文本的多列布局，我想大家并不陌生，因为报纸和杂志上我们随处可见，这种布局在报纸和杂志上都使用了几十年了，但需要在Web页面上实现文本的多列布局，正如下图所示。</p>
+		</div>
+	</div>
+<!-- column分列 结束 -->
+
+<!-- 盒模型-伸缩布局Flexbox 开始 -->
+	<div>
+		<ul class="flexcontainer">
+			<li>
+			</li>
+			<li></li>
+			<li>dfgf</li>
+		</ul>
+	</div>
+<!-- 盒模型-伸缩布局Flexbox 結束 -->
+
+	<textarea class="textarea"></textarea>
+
+	<a class="attrfn" title="我是一个title属性值，我插在你的后面" data-txt="123456789">我是元素</a><img class="attrfn" src="./imgs/bg-01.jpg" data-src-600px="./imgs/login_bg_0001.png" data-src-800px="image-800px.jpg" alt="" />
+</body>
+<script>
+</script>
+</html>

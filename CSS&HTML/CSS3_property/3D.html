@@ -1,0 +1,36 @@
+<!DOCUTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>flex弹性盒子(IE9+)</title>
+	<link type="text/css" rel="stylesheet" media="screen and (min-width:500px) and (max-width:1000px),print" href="./css/screen.css" />
+	<link type="text/css" rel="stylesheet" media="print" href="./css/print.css" />
+	<style>
+	ul,li{list-style:none;padding:0;margin:0;}
+
+	/*设置3D场景
+	--------------------------------------------------*/
+	.box {
+
+	}
+	.d3 {
+		-webkit-transform-style: -webkit-preserve-3d;
+		-moz-transform-style: -moz-preserve-3d;
+		transform-style: preserve-3d;
+
+		-webkit-perspective: 800;
+		-moz-perspective: 800;
+		perspective: 800;
+
+		-webkit-perspective-origin: 50% 50%;
+		-moz-perspective-origin: 50% 50%;
+		perspective-origin: 50% 50%;
+	}
+	</style>
+</head>
+<body>
+<div class="d3 box"></div>
+</body>
+<script>
+</script>
+</html>

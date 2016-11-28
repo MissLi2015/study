@@ -1,0 +1,6 @@
+body {
+	background-color: green;
+}
+.border-style div {
+	border-color: green !important;
+}

@@ -1,0 +1,221 @@
+﻿#header {
+	background-color: #fff;
+}
+#top-bar {
+	color: #666;
+	line-height: 30px;
+	border-bottom: 1px solid #e3e3e3;
+}
+.login-btn-warp {
+	float: right;
+}
+.login-btn-warp a.s-color {
+	color: #ff6d2d;
+}
+.i-username {
+	position: relative;
+	top: 3px;
+}
+.img-phone {
+	position: relative;
+	top: 4px;
+}
+/*二维码*/
+.qr-code {
+	position: absolute;
+	right: 0;
+	width: 134px;
+	height: 143px;
+}
+
+.logo-bar a {
+	display: inline-block;
+	padding: 20px 0 30px;
+}
+/*logo图标*/
+.huatuo-logo1 {
+	font-size: 0;
+}
+
+/*导航条*/
+.nav-bar {
+	background-color: #2081c7;
+	border-bottom: 1px solid #176caa;
+}
+.nav li {
+	float: left;
+}
+.nav a {
+	display: inline-block;
+	font-size: 16px;
+	color: #fff;
+	padding: 0 40px;
+	line-height: 40px;
+}
+.nav a.s-color, .nav a:hover {
+	background-color: #186399;
+}
+.nav .split-line {
+}
+.nav .split-line i {
+	width: 2px;
+	margin-top: 9px;
+}
+
+/*banner*/
+.banner-warp {
+	width: 100%;
+	height: 427px;
+	overflow: hidden;
+	position: relative;
+	background-color: #f2f5f5;
+	border-bottom: 1px solid #2081c7;
+}
+#banner {
+	margin: 0 auto;
+}
+.login-content {
+	position: absolute;
+	top: 20px;
+	/*height: 368px;*/
+	/*width: 338px;*/
+	margin-left: 860px;
+	background-color: #fff;
+	padding: 30px 14px 80px 23px;
+	border: 1px solid #cecece;
+}
+.login-content .errortips-warp {
+	width: 280px;
+	height: 48px;
+	color: #666;
+	position: absolute;
+	background-color: #fef2f2;
+	border: 1px solid #ff8f8f;
+}
+.login-content h2 {
+	font-size: 18px;
+	color: #333;
+	padding-bottom: 30px;
+}
+.login-content p+p {
+	padding-bottom: 45px;
+	margin-top: 20px;
+}
+.login-content input {
+	display: block;
+	width: 235px;
+	height: 38px;
+	padding-left: 45px;
+	border: 1px solid #d1d0d0;
+}
+.login-content .s-input-color {
+	border-color: #8bb1f1;
+}
+.login-content input+i {
+	/*position: relative;*/
+	margin-top: -31px;
+	float: left;
+	border-right: 1px solid #e6e6e6;
+}
+#forget-pwd {
+	font-size: 12px;
+	color: #2081c7;
+}
+#user-register {
+	font-size: 12px;
+	color: #999;
+	float: right;
+}
+#user-login-btn {
+	display: inline-block;
+	width: 280px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	background-color: #ff6d2d;
+	border-radius: 2px;
+	margin-top: 12px;
+}
+
+
+/*主体部分*/
+.main li+li {
+	border-top: 1px solid #e3e4e6;
+}
+.main .g-warp {
+	height: 430px;
+	line-height: 430px;
+}
+.txt-content {
+	display: inline-block;
+	line-height: normal;
+	position: relative;
+	top: 87px;
+}
+.txt-content h1 {
+	font-size: 40px;
+}
+.txt-content p {
+	font-size: 24px;
+	color: #999;
+	padding-top: 33px;
+	padding-bottom: 60px;
+}
+.txt-content a {
+	font-size: 20px;
+	color: #40a0e6;
+}
+.txt-content1 .g-warp {
+	background: url("../../imgs/index-1.png") no-repeat scroll right center;
+}
+.txt-content1 .g-warp h1 {
+	color: #2081c7;
+}
+.txt-content2 {
+	background: #fff6ed;
+}
+.txt-content2 .g-warp {
+	text-align: right;
+	background: url("../../imgs/index-2.png") no-repeat scroll left center;
+}
+.txt-content2 .g-warp h1 {
+	color: #eb933d;
+}
+.txt-content3 {
+	background: #f5fbff;
+}
+.txt-content3 .g-warp {
+	background: url("../../imgs/index-3.png") no-repeat scroll right center;
+}
+.txt-content3 .g-warp h1 {
+	color: #52cf90;
+}
+.txt-content4  {
+	background: #fdfffc;
+}
+.txt-content4 .g-warp {
+	text-align: right;
+	background: url("../../imgs/index-4.png") no-repeat scroll left center;
+}
+.txt-content4 .g-warp h1 {
+	color: #ff522f;
+}
+.txt-content4 .g-warp p {
+	line-height: 42px;
+}
+
+
+/*脚部*/
+#footer {
+	height: 200px;
+	color: #666;
+	text-align: center;
+	border-top: 1px solid #ccc;
+}
+#footer div {
+	padding-top: 36px;
+}
+#footer p {
+	padding-top: 32px;
+}

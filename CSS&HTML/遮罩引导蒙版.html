@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> -->
+    <title>测试</title>
+    <style>
+    body {
+        margin: 0;
+    }
+    .cover {
+        position: fixed;
+        border-color: red;
+        border-style: solid;
+        top: 0;
+    }
+    .cover::before1 {
+        content: '';
+        width: 100%; height:100%;
+        border-radius: 50%;
+        border: 400px solid rgba(0,0,0,.2);
+        position: absolute;
+        left: -400px; top: -400px;
+        /* 自己瞎填的参数，示意 */
+        box-shadow: 0 0 0 2px rgba(0,0,0,.2);
+    }
+    span {
+        /*display: inline-block;*/
+        margin-top: 300px;
+        padding: 200px;
+    }
+    </style>
+</head>
+<body>
+	<input id="i-div2" type="text" />
+	<input id="i-div1" type="text" />
+	<div class="parent">
+		<label for="i-div1"><span class="span1" >马上就到法律咖色的</span></label>
+		<label for="i-div2"><div class="div2"></div></label>
+	</div>
+    <div class="cover"></div>
+</body>
+<script type="text/javascript" src="./js/libs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+
+/*
+@params cover:单独的蒙版元素
+@params target:需要指引的元素
+*/
+var coverGuide = function(cover, target) {
+    var body = document.body,
+        doc = document.documentElement; //html元素
+        if(cover && target) {
+            // target size(width/height)
+            var targetWidth = target.clientWidth,
+                targetHeight = target.clientHeight;
+
+            // page size
+            var pageWidth = doc.scrollWidth,
+                pageHeight = doc.scrollHeight;
+
+            // offset of target 元素相对页面的偏移（元素相对视口的距离加上页面top被滚动隐藏的高度）
+            var offsetTop = target.getBoundingClientRect().top + (body.scrollTop || doc.scrollTop),
+                offsetLeft = target.getBoundingClientRect().left + (body.scrollLeft || doc.scrollLeft);
+
+            cover.style.width = targetWidth + 'px';
+            cover.style.height = targetHeight + 'px';
+            cover.style.borderWidth = 
+                offsetTop + 'px ' +                                 // border-top
+                (pageWidth - targetWidth - offsetLeft) + 'px ' +    // border-right
+                (pageHeight - targetHeight - offsetTop) + 'px ' +   // border-bottom
+                offsetLeft + 'px';                    // border-left
+            cover.style.display = 'block';
+        }
+
+        // resize 
+        if(!cover.isResizeBind) {
+            if(window.addEventListener) {
+                window.addEventListener('resize', function() {
+                    coverGuide(cover, target);
+                });
+                cover.isResizeBind = true;
+            } else if(window.attachEvent) {
+                window.attachEvent('onresize', function() {
+                    coverGuide(over, target);
+                });
+                cover.isResizeBind = true;
+
+                // IE7， IE8 box-shadow hack
+                cover.innerHTML = '<img src="guide-shadow.png" />'
+            }
+        }
+};
+// 不能用于行内元素（貌似行内元素获取不了高宽）
+coverGuide(document.querySelector('.cover'), document.querySelector('.span1'));
+
+console.log(document.querySelector('.span1').clientWidth, document.querySelector('.span1').clientHeight);
+</script> 
+</html>

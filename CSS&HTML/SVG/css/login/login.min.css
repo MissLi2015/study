@@ -1,0 +1,17 @@
+.logo-bar{padding:27px 0 30px}
+.huatuo-logo1{font-size:0}
+.main{height:600px;background:url(../../imgs/login_bg_0001.png) no-repeat;border-bottom:1px solid #ccc;position:relative}
+.title-text{margin:179px 0 0 118px}
+.login-content{position:absolute;top:133px;margin-left:860px;background-color:#fff;padding:30px 14px 80px 23px;border:1px solid #cecece}
+.login-content .errortips-warp{width:280px;height:48px;color:#666;position:absolute;background-color:#fef2f2;border:1px solid #ff8f8f}
+.login-content h2{font-size:18px;color:#333;padding-bottom:30px}
+.login-content p+p{padding-bottom:45px;margin-top:20px}
+.login-content input{display:block;width:235px;height:38px;padding-left:45px;border:1px solid #d1d0d0}
+.login-content .s-input-color{border-color:#8bb1f1}
+.login-content input+i{margin-top:-31px;float:left;border-right:1px solid #e6e6e6}
+#forget-pwd{font-size:12px;color:#2081c7}
+#user-register{font-size:12px;color:#999;float:right}
+#user-login-btn{display:inline-block;width:280px;font-size:16px;color:#fff;text-align:center;line-height:40px;background-color:#ff6d2d;border-radius:2px;margin-top:12px}
+#footer{height:200px;color:#666;text-align:center}
+#footer div{padding-top:36px}
+#footer p{padding-top:32px}

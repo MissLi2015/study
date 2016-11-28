@@ -1,0 +1,41 @@
+/*reset
+----------------------------------------------------------------------------------------------------*/
+
+
+
+/*共样式
+----------------------------------------------------------------------------------------------------*/
+/*按钮共样式
+------------------------------------------------------------------------------------------*/
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0.35em 0.7em;
+}
+/*禁用*/
+.disable {
+    color: #666;
+    background-color: #ccc;
+}
+/*可用*/
+.usable {
+    background-color: #2081c7;
+}
+
+/*input
+------------------------------------------------------------------------------------------*/
+input[type="text"],
+input[type="password"] {
+    box-sizing: border-box;
+    width: 150px;
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #666;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #2081c7;
+}

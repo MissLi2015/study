@@ -1,0 +1,60 @@
+﻿.icon {
+	display: inline-block;
+}
+/*首页手机图标*/
+.i-phone {
+	width: 10px;
+	height: 19px;
+	background: url(../imgs/icons_001.gif) no-repeat;
+}
+/*首页导航栏分割线*/
+.i-split-line {
+	height: 22px;
+	background: url(../imgs/icons_001.gif) no-repeat -20px 0;
+}
+/*用户名输入框图标*/
+.i-username {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.gif) no-repeat 10px -25px;
+}
+.i-username-focus {
+	width: 37px;
+	height: 20px;
+	background: red url(../imgs/icons_001.gif) no-repeat -20px -25px;
+}
+/*密码输入框图标*/
+.i-userpwd {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.gif) no-repeat 10px -55px;
+}
+.i-userpwd-focus {
+	width: 37px;
+	height: 20px;
+	background: url(../imgs/icons_001.gif) no-repeat -20px -55px;
+}
+/*错误提示图标*/
+.i-errortips {
+	width: 14px;
+	height: 14px;
+	background: url(../imgs/icons_001.gif) no-repeat -30px 0;
+}
+/*消息图标*/
+.i-message {
+	width: 18px;
+	height: 15px;
+	background: url(../imgs/icons_001.gif) no-repeat 0 -85px;
+}
+/*地图导向图标*/
+.i-guide {
+	width: 18px;
+	height: 24px;
+	background: url(../imgs/icons_001.gif) no-repeat -30px -80px;
+}
+/*名医戳*/
+.i-doctor-badge {
+	width: 53px;
+	height: 53px;
+	background: url(../imgs/icons_002.png) no-repeat;
+}
